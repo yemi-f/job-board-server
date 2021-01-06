@@ -2,14 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Applicant = require('../models/Applicant');
 var ImageKit = require("imagekit");
-const dotenv = require("dotenv").config();
+require("dotenv").config();
 const passport = require("passport");
 
-if (dotenv.error) {
-    throw dotenv.error
-}
-
-const { PRIVATE_KEY, PUBLIC_KEY, URL_ENDPOINT } = dotenv.parsed;
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+const PUBLIC_KEY = process.env.PUBLIC_KEY
+const URL_ENDPOINT = process.env.URL_ENDPOINT
 
 router.get('/auth', async (req, res) => {
     try {
