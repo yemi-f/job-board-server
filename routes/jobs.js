@@ -5,13 +5,12 @@ const Job = require('../models/Job');
 
 router.get('/', async (req, res) => {
     try {
-        const { title, limit, page, location, department, degree, type } = req.query;
+        const { title, limit, page, location, department, type } = req.query;
 
         const query = {
             title: new RegExp(title, "i"),
             location: new RegExp(location, "i"),
             department: new RegExp(department, "i"),
-            minDegree: new RegExp(degree, "i"),
             employmentType: new RegExp(type, "i"),
         }
 

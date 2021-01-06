@@ -8,7 +8,6 @@ const JobSchema = mongoose.Schema({
     aboutThisRole: { type: String, required: true },
     responsibilities: [{ type: String, required: true }],
     requirements: [{ type: String, required: true }],
-    minDegree: { type: String, required: true }
 })
 
 module.exports = mongoose.model("Job", JobSchema)

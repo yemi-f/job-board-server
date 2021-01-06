@@ -10,10 +10,10 @@ const expressSession = require('express-session')({
 });
 require('dotenv').config();
 require("./auth/auth");
-const url = "mongodb://127.0.0.1:27017/db-job-board";
-const port = 5000;
+// const uri = "mongodb://127.0.0.1:27017/db-job-board";
+const uri = process.env.CONNECTION_STRING;
 
-
+const port = process.env.PORT || 5000;
 
 //middlewares
 app.use(cors());
@@ -43,10 +43,11 @@ app.get('/', (req, res) => {
 
 //connect to db
 mongoose.connect(
-    url,
+    uri,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false },
     () => console.log("connected to db")
 );
+
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
