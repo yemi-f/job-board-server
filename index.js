@@ -11,7 +11,8 @@ const expressSession = require('express-session')({
 require('dotenv').config();
 require("./auth/auth");
 // const uri = "mongodb://127.0.0.1:27017/db-job-board";
-const uri = process.env.CONNECTION_STRING;
+// const uri = process.env.CONNECTION_STRING;
+const uri = process.env.MONGODB_URI;
 
 const port = process.env.PORT || 5000;
 
