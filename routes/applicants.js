@@ -5,6 +5,10 @@ var ImageKit = require("imagekit");
 const dotenv = require("dotenv").config();
 const passport = require("passport");
 
+if (dotenv.error) {
+    throw dotenv.error
+}
+
 const { PRIVATE_KEY, PUBLIC_KEY, URL_ENDPOINT } = dotenv.parsed;
 
 router.get('/auth', async (req, res) => {
