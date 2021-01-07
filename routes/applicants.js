@@ -4,7 +4,6 @@ const Applicant = require('../models/Applicant');
 var ImageKit = require("imagekit");
 require("dotenv").config();
 const passport = require("passport");
-
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const PUBLIC_KEY = process.env.PUBLIC_KEY
 const URL_ENDPOINT = process.env.URL_ENDPOINT

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Job = require('../models/Job');
-
+const passport = require("passport");
 
 router.get('/', async (req, res) => {
     try {
@@ -30,6 +30,26 @@ router.get('/', async (req, res) => {
         res.status(400).json({ error: "invalid request" });
     }
 })
+
+router.post("/", passport.authenticate('jwt', { session: false }), async (req, res) => {
+    try {
+        const job = new Job({
+            title: req.body.title,
+            location: req.body.location,
+            department: req.body.department,
+            employmentType: req.body.employmentType,
+            aboutThisRole: req.body.aboutThisRole,
+            responsibilities: req.body.responsibilities,
+            requirements: req.body.requirements
+        });
+
+        const savedJob = await job.save();
+        res.status(200).json(savedJob);
+    } catch (err) {
+        res.status(400).json({ error: "invalid request" });
+    }
+})
+
 
 router.get('/count', async (req, res) => {
     try {
