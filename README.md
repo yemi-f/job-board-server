@@ -55,3 +55,36 @@ Add a .env file at the root of the project directory with the following contents
  - `POST /users/signup` - creates a new user
  - `POST /users/signin` - sign in 
  - `GET /users/logout` - sign out
+
+## Sample response
+The following is a sample response from the `GET jobs/:id` endpoint:
+```{
+  "responsibilities": [
+    "Vestibulum fringilla pede sit amet augue",
+    "Morbi ac felis",
+    "Vivamus quis mi",
+    "Nulla sit amet est",
+    "Nullam quis ante",
+    "Praesent congue erat at massa",
+    "Vestibulum volutpat pretium libero",
+    "Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem",
+    "Curabitur at lacus ac velit ornare lobortis",
+    "Ut tincidunt tincidunt erat"
+  ],
+  "requirements": [
+    "Aenean vulputate eleifend tellus",
+    "Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus",
+    "Pellentesque posuere",
+    "Nullam sagittis",
+    "Quisque malesuada placerat nisl",
+    "Donec vitae sapien ut libero venenatis faucibus",
+    "Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum",
+    "Sed in libero ut nibh placerat accumsan"
+  ],
+  "_id": "5ff5efbd67759d712d4f55bc",
+  "title": "Marketing director",
+  "department": "Marketing",
+  "location": "Toronto, ON",
+  "employmentType": "Contract",
+  "aboutThisRole": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
+}```
