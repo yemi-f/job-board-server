@@ -50,17 +50,6 @@ router.post("/", passport.authenticate('jwt', { session: false }), async (req, r
     }
 })
 
-
-router.get('/count', async (req, res) => {
-    try {
-        const results = await Job.countDocuments({});
-
-        res.status(200).json({ numOfDocuments: results });
-    } catch (err) {
-        res.status(400).json({ error: "invalid request" });
-    }
-})
-
 router.get('/:id', async (req, res) => {
     try {
         const job = await Job.findById(req.params.id);
