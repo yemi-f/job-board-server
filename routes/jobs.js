@@ -5,7 +5,7 @@ const passport = require("passport");
 
 router.get('/', async (req, res) => {
     try {
-        const { title, limit, page, location, department, type } = req.query;
+        const { title, limit, page, location, department, type, sort } = req.query;
 
         const query = {
             title: new RegExp(title, "i"),
@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 
         const results = await Job
             .find(query)
+            .sort({ _id: parseInt(sort) })
             .limit(parseInt(limit))
             .skip(parseInt(limit) * parseInt(page - 1))
 

@@ -7,7 +7,7 @@ const JobSchema = mongoose.Schema({
     employmentType: { type: String, required: true },
     aboutThisRole: { type: String, required: true },
     responsibilities: [{ type: String, required: true }],
-    requirements: [{ type: String, required: true }],
+    requirements: [{ type: String, required: true }]
 })
 
 module.exports = mongoose.model("Job", JobSchema)
