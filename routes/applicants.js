@@ -25,7 +25,7 @@ router.get('/auth', async (req, res) => {
 
 router.get('/', passport.authenticate('jwt', { session: false }), async (req, res) => {
     try {
-        const { firstname, limit, page, lastname } = req.query;
+        const { firstname, limit, page, lastname, sort } = req.query;
 
         const query = {
             firstName: new RegExp(firstname, "i"),
@@ -34,6 +34,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), async (req, re
 
         const results = await Applicant
             .find(query)
+            .sort({ _id: parseInt(sort) })
             .limit(parseInt(limit))
             .skip(parseInt(limit) * parseInt(page - 1))
 
