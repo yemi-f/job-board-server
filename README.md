@@ -58,7 +58,8 @@ Add a .env file at the root of the project directory with the following contents
 
 ## Sample response
 The following is a sample response from the `GET jobs/:id` endpoint:
-```{
+```
+{
   "responsibilities": [
     "Vestibulum fringilla pede sit amet augue",
     "Morbi ac felis",
@@ -87,4 +88,5 @@ The following is a sample response from the `GET jobs/:id` endpoint:
   "location": "Toronto, ON",
   "employmentType": "Contract",
   "aboutThisRole": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
-}```
+}
+```
