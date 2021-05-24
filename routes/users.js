@@ -37,7 +37,7 @@ router.post(
 
                             const body = { _id: user._id, email: user.email };
                             const accessToken = jwt.sign({ body }, process.env.ACCESS_TOKEN_SECRET);
-                            return res.header("Authorization", accessToken).send("bearer " + accessToken);
+                            return res.header("Authorization", accessToken).send(`bearer ${accessToken}`);
                         }
                     );
                 } catch (error) {
