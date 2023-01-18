@@ -1,8 +1,6 @@
 # job-board-server 
 This is a REST API built with [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [Mongoose](https://mongoosejs.com/).
 
-REST API deployed to Heroku https://job-board-xc23d56.herokuapp.com/
-
 
 ## Install
 ### `npm install`
